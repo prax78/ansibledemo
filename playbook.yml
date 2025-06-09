@@ -2,5 +2,5 @@
 - hosts: localhost
   gather_facts: false
   tasks:
-    - debug:
+    - fail:
         msg: "Hello world!"
