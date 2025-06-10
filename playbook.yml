@@ -2,5 +2,5 @@
 - hosts: localhost
   gather_facts: false
   tasks:
-    - fail:
+    - debug:
         msg: "Hello world! {{ e_var | default('') }}"
