@@ -3,4 +3,4 @@
   gather_facts: false
   tasks:
     - fail:
-        msg: "Hello world!"
+        msg: "Hello world! {{ e_var | default('') }}"
