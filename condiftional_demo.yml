@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  gather_facts: false
+  vars:
+   continue: true
+  tasks:
+    - name: Print this only when continue is true 
+      debug:
+       msg: "Printed when this condition becomes true"
+      when: continue
+
+
+
+
