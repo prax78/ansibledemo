@@ -16,7 +16,7 @@
    - set_stats:
        data:
          myvar: "{{ inventory_hostname }}"
-       aggregate: false 
+
 
 
 
