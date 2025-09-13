@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  gather_facts: false
+  vars:
+   my_list: ["orange","apple","kiwi"]
+  tasks:
+    - name: loop through list and print each element
+      debug:
+       msg: "{{ item }}"
+      loop: "{{ my_list }}"
+
+
