@@ -10,11 +10,10 @@
 
     - name: Setting fact
       set_fact:
-        my_var: "no"
+        my_var: "best"
 
     - name: Printing the variable
       debug:  
         msg: "{{ my_var }}"
 
 
-        
