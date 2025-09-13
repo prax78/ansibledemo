@@ -5,7 +5,7 @@
    - name: Run this block when the server is Linux
      debug:
        msg: "Hostname  is {{ inventory_hostname }} and OS type is {{ hostvars.ansible_os_type }}"
-     when: hostvars.ansible_os_type == 'linux'"
+     when: hostvars.ansible_os_type == 'linux'
 
    - name: Run this block when the server is Windows
      debug:
