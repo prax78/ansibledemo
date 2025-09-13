@@ -2,12 +2,14 @@
 - hosts: all
   gather_facts: false
   tasks:
-   - name: Run this block when the server is Linux
-     debug:
-       msg: "Hostname  is {{ inventory_hostname }} and OS type is {{ hostvars.ansible_os_type }}"
-     when: hostvars[inventory_hostname]['ansible_os_type'] == 'linux'
+     - debug:
+         vars: hostvars[inventory_hostname]
+  #  - name: Run this block when the server is Linux
+  #    debug:
+  #      msg: "Hostname  is {{ inventory_hostname }} and OS type is {{ hostvars.ansible_os_type }}"
+  #    when: hostvars[inventory_hostname]['ansible_os_type'] == 'linux'
 
-   - name: Run this block when the server is Windows
-     debug:
-       msg: "Hostname  is {{ inventory_hostname }} and OS type is {{ hostvars.ansible_os_type }}"
-     when: hostvars[inventory_hostname]['ansible_os_type'] == 'windows'
+  #  - name: Run this block when the server is Windows
+  #    debug:
+  #      msg: "Hostname  is {{ inventory_hostname }} and OS type is {{ hostvars.ansible_os_type }}"
+  #    when: hostvars[inventory_hostname]['ansible_os_type'] == 'windows'
