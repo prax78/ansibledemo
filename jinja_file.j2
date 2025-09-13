@@ -1,5 +1,9 @@
 <html>
 <body>
+{% if is_continue %}
 <h1>Welcome to Home -- {{ inventory_hostname }} </h1>
+{% else %}
+<h1>Sorry !! </h1>
+{% endif %}
 </body>
 </html>
