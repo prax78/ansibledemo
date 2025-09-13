@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  gather_facts: false
+  vars:
+   my_var: "test"
+  tasks:
+    - name: Printing the variable
+      debug:  
+        msg: "{{ my_var }}"
+
+    - name: Setting fact
+      set_fact:
+        my_var: "no"
+
+    - name: Printing the variable
+      debug:  
+        msg: "{{ my_var }}"
+
+
+        
