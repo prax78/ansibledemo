@@ -5,10 +5,15 @@
    my_var: "test"
   tasks:
     - name: Get IP Address
-      win_shell:  Get-NetIPAddress |?{$_.addressfamily -eq 'IPv4'}| select IPAddress
+      win_shell:  (Get-NetIPAddress |?{$_.addressfamily -eq 'IPv4'}| select IPAddress).IPAddress
       register: ip_output
     
-    - debug:   
-       var: ip_output.stdout
+    - name: Variable to hold IPAddress
+      set_fact:
+        ip: "{{ ip_output.stdout }}"
+      
+    - name: Ping this IP Address
+      win_shell:  ping {{ ip }}
+
       
 
