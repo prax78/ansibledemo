@@ -7,7 +7,7 @@
     - name: Print this only when continue is true 
       debug:
        msg: "Printed when this condition becomes true"
-      when: is_continue
+      when: is_continue and /or
 
 
 
