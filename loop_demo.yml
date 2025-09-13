@@ -4,9 +4,9 @@
   vars:
    my_list: ["orange","apple","kiwi"]
   tasks:
-    - name: loop through list and print each element
-      debug:
-       msg: "{{ item }}"
+    - name: call my loop operator yaml
+      include_taks: loop_item.yml 
       loop: "{{ my_list }}"
+
 
 
