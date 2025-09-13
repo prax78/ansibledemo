@@ -13,6 +13,11 @@
        msg: "Hostname  is {{ inventory_hostname }} and OS type is {{hostvars[inventory_hostname]['ansible_os_type']}}"
      when: hostvars[inventory_hostname]['ansible_os_type'] == 'windows'
 
+   - set_stats:
+       data:
+         myvar: "test"
+       per_host: true   
+
   #  - name: Run this block when the server is Windows
   #    debug:
   #      msg: "Hostname  is {{ inventory_hostname }} and OS type is {{ hostvars.ansible_os_type }}"
