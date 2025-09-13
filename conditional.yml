@@ -16,6 +16,7 @@
    - set_stats:
        data:
          myvar: "test"
+       aggregate: false  
 
 
   #  - name: Run this block when the server is Windows
