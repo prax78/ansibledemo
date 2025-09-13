@@ -4,16 +4,11 @@
   vars:
    my_var: "test"
   tasks:
-    - name: Printing the variable
-      debug:  
-        msg: "{{ my_var }}"
-
-    - name: Setting fact
-      set_fact:
-        my_var: "best"
-
-    - name: Printing the variable
-      debug:  
-        msg: "{{ my_var }}"
-
+    - name: Get IP Address
+      win_shell:  Get-NetIPAddress |?{$_.addressfamily -eq 'IPv4'}| select IPAddress
+      register: ip_output
+    
+    - debug:   
+       var: ip_output.stdout
+      
 
