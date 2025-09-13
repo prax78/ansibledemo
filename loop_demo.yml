@@ -5,7 +5,7 @@
    my_list: ["orange","apple","kiwi"]
   tasks:
     - name: call my loop operator yaml
-      include_taks: loop_item.yml 
+      include_tasks: loop_item.yml 
       loop: "{{ my_list }}"
 
 
