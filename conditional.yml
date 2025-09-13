@@ -15,9 +15,9 @@
 
    - set_stats:
        data:
-         myvar: "test"
+         myvar: "{{ inventory_hostname }}"
        aggregate: false 
-       per_host: true 
+
 
 
   #  - name: Run this block when the server is Windows
