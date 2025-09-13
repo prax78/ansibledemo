@@ -16,7 +16,7 @@
    - set_stats:
        data:
          myvar: "test"
-       per_host: true   
+
 
   #  - name: Run this block when the server is Windows
   #    debug:
