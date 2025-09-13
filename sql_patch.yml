@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  gather_facts: false
+  vars:
+   sql_version_info: 
+      - version_number: "1.0.0"
+        patch_number: "KB12345"
+      - version_number: "1.0.1"
+        patch_number: "KB3456"
+  tasks: 
+    - debug:
+        msg: "Print patch number when the version is 1.0.0 {{ item.patch_number}}"
+      loop: "{{ sql_version_info }}"
+      when: item.version_number == '1.0.0'
+        
