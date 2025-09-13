@@ -1,0 +1,8 @@
+---
+- hosts: all
+  gather_facts: false
+  tasks:
+   - name: HTML file
+     template:
+       src: "jinja_file.j2"
+       dest: 'c:\\temp\\index.html'
