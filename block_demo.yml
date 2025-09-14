@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+   - name: ping google.com
+     command: ping -c 2 google.com
+     register: ping_result
+
+   - debug:
+       msg: "Ping result of google.com {{ ping_result }}"
