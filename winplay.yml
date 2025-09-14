@@ -1,0 +1,18 @@
+---
+- hosts: all
+  gather_facts: false
+  tasks:
+    - name: Copy the powershell script to Windows
+      win_copy:
+        src: ps.ps1
+        dest: "c:\\temp\\"
+    
+    - name: Execute copied PS script
+      win_shell: |-
+         cd c:\\temp
+         .\\ps.ps1
+      register: script_output
+
+    - name: Show the script output 
+      debug:
+        msg: "Script output: {{ script_output.stdout }}"     
