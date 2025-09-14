@@ -2,9 +2,14 @@
 - hosts: localhost
   gather_facts: false
   tasks:
-   - name: ping google.com
-     command: ping -c 2 google.com
-     register: ping_result
+   - block:
+      - name: ping google.com
+        command: ping -c 2 google.com
+        register: ping_result
+     rescue:
+       - name: Error occured
+         debug:
+           msg: "Error occured on {{ inventory_hostname }} {{ ansible_failed_task.name }}"
 
    - debug:
        msg: "Ping result of google.com {{ ping_result }}"
