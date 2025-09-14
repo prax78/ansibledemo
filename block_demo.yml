@@ -8,6 +8,7 @@
         register: ping_result
         retries: 2
         delay: 5
+
      rescue:
        - name: Error occured
          debug:
