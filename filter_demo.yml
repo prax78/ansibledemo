@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  gather_facts: false
+  vars:
+   mylist:
+     - name: "john"
+       age: 30
+     - name: "mary"
+       age: 25  
+    
+  tasks:
+    - debug:
+        msg: "hostname in uppercase {{ inventory_hostname | upper }}"
+    - debug:
+        msg: "hostname in uppercase {{ my_list | map(attributes='name') | list }}"

@@ -17,7 +17,7 @@
        data:
          myvar: "{{ inventory_hostname }}"
        aggregate: false  
-
+BJYbGtV6BkSMbjoHrO8WMAi6lfHQmb
 
 
 
