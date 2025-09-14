@@ -12,4 +12,4 @@
     - debug:
         msg: "hostname in uppercase {{ inventory_hostname | upper }}"
     - debug:
-        msg: "hostname in uppercase {{ mylist | map(attributes='name') | list }}"
+        msg: "hostname in uppercase {{ mylist | map(attribute='name') | list }}"
